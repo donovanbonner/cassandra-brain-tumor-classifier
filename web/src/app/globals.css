@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0B1E27;
+  --color-bg-soft: #102A36;
+  --color-surface: #0F2630;
+  --color-surface-2: #122F3D;
+  --color-border: #1F3A47;
+  --color-fg: #E6F1F4;
+  --color-fg-muted: #93B0BB;
+
+  --color-teal: #14B8A6;
+  --color-teal-soft: #2DD4BF;
+  --color-pink: #EC4899;
+
+  --color-glioma: #EF4444;
+  --color-meningioma: #F59E0B;
+  --color-pituitary: #8B5CF6;
+  --color-notumor: #10B981;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-card: 16px;
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html, body {
+  background: radial-gradient(
+    ellipse at top,
+    var(--color-bg-soft) 0%,
+    var(--color-bg) 55%
+  );
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-teal) 35%, transparent);
+  color: var(--color-fg);
+}

@@ -99,6 +99,17 @@ export default function BrainHero() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={entered ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+            transition={{ duration: 0.7, delay: 2.05, ease: easeOutExpo }}
+            className="mt-5"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-surface/70 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-teal">
+              Powered by Cassandra v1
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={entered ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
             transition={{ duration: 0.7, delay: 2.15, ease: easeOutExpo }}
             className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
           >

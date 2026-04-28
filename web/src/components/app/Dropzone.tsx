@@ -57,8 +57,8 @@ export default function Dropzone({ onFile }: Props) {
           {isDragActive ? "Queue the scan" : "Drag and drop a scan"}
         </h2>
         <p className="relative mt-3 max-w-sm text-sm leading-relaxed text-fg-muted">
-          Single image only. PNG, JPG, JPEG, and WEBP are accepted. A mock
-          prediction starts as soon as the file lands.
+          Single image only. PNG, JPG, JPEG, and WEBP are accepted. An
+          analysis starts as soon as the file lands.
         </p>
 
         <div className="relative mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-bg px-4 py-2 text-xs font-medium text-fg-muted">

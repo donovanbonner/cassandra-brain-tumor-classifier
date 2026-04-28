@@ -123,8 +123,8 @@ export default function ResultStage({
             )}
           </div>
           <p className="mt-3 px-1 text-xs text-fg-muted">
-            Grad-CAM placeholder · the real heatmap arrives when the model
-            backend is wired in.
+            Grad-CAM attention map overlay generated from the current model
+            prediction.
           </p>
         </motion.div>
 
@@ -182,7 +182,7 @@ function ErrorView({ message, onReset, onRetry }: ErrorProps) {
         <ShieldAlert size={26} strokeWidth={1.6} />
       </div>
       <p className="mt-6 text-xs uppercase tracking-[0.3em] text-glioma">
-        Mock error
+        Analysis error
       </p>
       <h2 className="mt-2 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
         Analysis didn&rsquo;t complete

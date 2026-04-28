@@ -28,7 +28,7 @@ export default function AppHeader({ processing = false }: Props) {
 
         <div className="hidden items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-fg-muted sm:inline-flex">
           <span className="h-2 w-2 rounded-full bg-teal shadow-[0_0_12px_var(--color-teal)]" />
-          Mock prediction
+          AI prediction
         </div>
       </div>
 

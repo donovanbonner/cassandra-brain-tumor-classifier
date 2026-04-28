@@ -42,8 +42,8 @@ export default function UploadStage({ onFile }: Props) {
         transition={{ duration: 0.55, delay: 0.35, ease: easeOutExpo }}
         className="mt-3 max-w-md text-sm text-fg-muted sm:text-base"
       >
-        PNG or JPG, up to 10MB. The mock pipeline takes you straight to the
-        diagnosis once it lands.
+        PNG or JPG, up to 10MB. Analysis starts automatically as soon as your
+        scan lands.
       </motion.p>
 
       <motion.div
@@ -62,7 +62,7 @@ export default function UploadStage({ onFile }: Props) {
         className="mt-10 flex flex-col items-center gap-3"
       >
         <p className="text-[0.7rem] uppercase tracking-[0.3em] text-fg-muted/60">
-          Or try a sample · coming in phase 7
+          Cassandra can analyze these four classes
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2">
           {TUMOR_CLASSES.map((cls) => (

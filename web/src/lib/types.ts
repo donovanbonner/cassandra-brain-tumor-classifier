@@ -1,8 +1,8 @@
 export const TUMOR_CLASSES = [
   "glioma",
   "meningioma",
-  "pituitary",
   "notumor",
+  "pituitary",
 ] as const;
 
 export type TumorClass = (typeof TUMOR_CLASSES)[number];

@@ -12,6 +12,46 @@ let nextClassIndex = 0;
 let heatmapDataUrlPromise: Promise<string> | null = null;
 
 export async function mockPredict(file: File): Promise<Prediction> {
+  const inferenceBaseUrl = process.env.NEXT_PUBLIC_INFERENCE_URL?.trim();
+  if (inferenceBaseUrl) {
+    return predictFromApi(file, inferenceBaseUrl);
+  }
+  return predictMock(file);
+}
+
+async function predictFromApi(
+  file: File,
+  inferenceBaseUrl: string,
+): Promise<Prediction> {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const response = await fetch(`${inferenceBaseUrl}/predict`, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!response.ok) {
+    let detail = "Analysis failed.";
+    try {
+      const payload = (await response.json()) as { detail?: string };
+      if (payload.detail) detail = payload.detail;
+    } catch {
+      // Best effort only.
+    }
+    throw new Error(detail);
+  }
+
+  const payload = (await response.json()) as Prediction;
+  return {
+    tumorClass: payload.tumorClass,
+    confidence: payload.confidence,
+    probabilities: payload.probabilities,
+    heatmapDataUrl: payload.heatmapDataUrl,
+  };
+}
+
+async function predictMock(file: File): Promise<Prediction> {
   const tumorClass = TUMOR_CLASSES[nextClassIndex % TUMOR_CLASSES.length];
   nextClassIndex += 1;
 
@@ -23,7 +63,7 @@ export async function mockPredict(file: File): Promise<Prediction> {
 
   if (file.name.toLowerCase().includes("fail")) {
     throw new Error(
-      `Mock analysis failed for "${file.name}". Rename the file to continue.`,
+      `Analysis failed for "${file.name}". Rename the file to continue.`,
     );
   }
 

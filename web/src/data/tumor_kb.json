@@ -1,0 +1,142 @@
+[
+  {
+    "id": "glioma-overview",
+    "class": "glioma",
+    "topic": "What is a glioma",
+    "text": "Gliomas are tumors that begin in the glial cells, which support and surround neurons in the brain or spine. They are the most common type of primary brain tumor in adults, accounting for roughly 30% of all brain tumors and about 80% of malignant ones. Gliomas vary widely in aggressiveness; the World Health Organization classifies them by grade (I to IV), with grade IV (glioblastoma) being the most aggressive. Survival, symptoms, and treatment all depend on grade, location, and the patient's overall health.",
+    "source": "NIH National Cancer Institute"
+  },
+  {
+    "id": "glioma-symptoms",
+    "class": "glioma",
+    "topic": "Glioma symptoms",
+    "text": "Glioma symptoms depend on tumor location and size. Common signs include persistent headaches that may be worse in the morning, nausea or vomiting, vision or speech changes, weakness or numbness on one side of the body, seizures, and gradual changes in personality, memory, or thinking. Symptoms typically develop over weeks or months. Any persistent or worsening neurological symptom should be evaluated by a licensed clinician.",
+    "source": "Mayo Clinic"
+  },
+  {
+    "id": "glioma-location",
+    "class": "glioma",
+    "topic": "Where gliomas occur",
+    "text": "Gliomas most often arise in the cerebral hemispheres, the largest part of the brain, with the frontal and temporal lobes being especially common sites. They can also develop in the brainstem, spinal cord, and optic nerves. Tumor location influences both the symptoms a patient experiences and the treatment options available. Frontal lobe gliomas, for example, are more likely to affect personality and motor function.",
+    "source": "American Association of Neurological Surgeons"
+  },
+  {
+    "id": "meningioma-overview",
+    "class": "meningioma",
+    "topic": "What is a meningioma",
+    "text": "A meningioma is a tumor that grows from the meninges, the protective membranes surrounding the brain and spinal cord. About 90% of meningiomas are benign (non-cancerous) and slow-growing. They account for roughly 30% of all primary brain tumors, making them one of the most common. Meningiomas occur more often in women than men, with peak incidence in middle and later life. Many are discovered incidentally on imaging done for other reasons.",
+    "source": "NIH National Cancer Institute"
+  },
+  {
+    "id": "meningioma-symptoms",
+    "class": "meningioma",
+    "topic": "Meningioma symptoms",
+    "text": "Many meningiomas grow slowly without producing symptoms for years. When symptoms do appear, they often include headaches, vision changes, hearing loss or ringing in the ears, memory problems, weakness or numbness in arms or legs, and seizures. Smaller, asymptomatic meningiomas are sometimes monitored over time with periodic MRI rather than treated immediately, especially in older patients.",
+    "source": "Mayo Clinic"
+  },
+  {
+    "id": "meningioma-location",
+    "class": "meningioma",
+    "topic": "Where meningiomas occur",
+    "text": "Meningiomas can develop anywhere along the meninges. The most common locations include the convexities (along the surface of the brain), the falx and parasagittal region (the membrane between the two brain hemispheres), and the skull base. Convexity meningiomas are generally easier to remove surgically, while skull base lesions can be more challenging because they sit near critical nerves and blood vessels.",
+    "source": "American Association of Neurological Surgeons"
+  },
+  {
+    "id": "pituitary-overview",
+    "class": "pituitary",
+    "topic": "What is a pituitary tumor",
+    "text": "A pituitary tumor, often called a pituitary adenoma, is a growth that arises in the pituitary gland, a small structure at the base of the brain that controls hormone production. Most pituitary tumors are benign and slow-growing. They may be functional, meaning they produce excess hormones, or non-functional. Pituitary adenomas account for roughly 10 to 15% of all primary brain tumors.",
+    "source": "NIH National Cancer Institute"
+  },
+  {
+    "id": "pituitary-symptoms",
+    "class": "pituitary",
+    "topic": "Pituitary tumor symptoms",
+    "text": "Pituitary tumor symptoms fall into two categories. Hormone-related symptoms reflect the gland's effect on the body and can include changes in menstruation, fertility, growth, weight, blood pressure, and metabolism. Pressure-related symptoms occur when a tumor presses on nearby structures and can include headaches, vision loss (often in peripheral fields), and double vision. The specific pattern depends on which hormones are affected.",
+    "source": "Mayo Clinic"
+  },
+  {
+    "id": "pituitary-location",
+    "class": "pituitary",
+    "topic": "Where pituitary tumors occur",
+    "text": "Pituitary tumors arise in the pituitary gland, which sits at the base of the brain inside a bony cavity called the sella turcica, just above the back of the nose and below the optic chiasm where the optic nerves cross. This anatomical proximity to the optic chiasm explains why peripheral vision changes are a common presenting symptom of larger pituitary tumors.",
+    "source": "American Association of Neurological Surgeons"
+  },
+  {
+    "id": "notumor-meaning",
+    "class": "notumor",
+    "topic": "What 'no tumor' means here",
+    "text": "A 'no tumor' classification means the model did not detect features consistent with the three tumor types it was trained to recognize: glioma, meningioma, and pituitary adenoma. This does not rule out other neurological conditions, very small lesions, tumor types not represented in the training data, or pathologies outside the brain. A clear AI screening result should never substitute for a clinician's evaluation when symptoms are present.",
+    "source": "project documentation"
+  },
+  {
+    "id": "notumor-followup",
+    "class": "notumor",
+    "topic": "What to do after a no-tumor result",
+    "text": "A 'no tumor' result on an AI screening tool is reassuring but not definitive. If the patient has neurological symptoms, the recommended path is consultation with a neurologist who may order additional imaging, such as a contrast-enhanced MRI, plus a clinical examination. AI tools assist clinicians by surfacing patterns; they do not diagnose. Persistent or worsening symptoms always warrant medical follow-up regardless of an AI result.",
+    "source": "project documentation"
+  },
+  {
+    "id": "brain-tumor-general",
+    "class": "general",
+    "topic": "Brain tumor basics",
+    "text": "A brain tumor is a mass of abnormal cells in the brain. Tumors can be primary, meaning they originate in the brain, or secondary (metastatic), meaning they spread from cancers elsewhere in the body. They are also classified as benign (non-cancerous) or malignant (cancerous). Treatment options range from observation to surgery, radiation therapy, and chemotherapy, depending on tumor type, location, grade, and the patient's health.",
+    "source": "NIH National Cancer Institute"
+  },
+  {
+    "id": "mri-overview",
+    "class": "general",
+    "topic": "Why MRI is used for brain tumors",
+    "text": "Magnetic Resonance Imaging (MRI) uses strong magnetic fields and radio waves to produce detailed images of soft tissues like the brain. MRI is the preferred modality for evaluating brain tumors because it provides high-resolution views of brain structures and can distinguish between different tissue types. Contrast agents such as gadolinium can enhance visibility of tumor boundaries, helping clinicians assess size, location, and characteristics.",
+    "source": "American Association of Neurological Surgeons"
+  },
+  {
+    "id": "gradcam-explanation",
+    "class": "general",
+    "topic": "What Grad-CAM shows",
+    "text": "Grad-CAM (Gradient-weighted Class Activation Mapping) is a technique for visualizing which regions of an image a deep learning model focused on when making its prediction. The colorful heatmap overlay highlights pixels that most influenced the decision; warmer colors (red and orange) indicate higher influence. Grad-CAM helps verify that a model is looking at clinically relevant features rather than artifacts or background.",
+    "source": "Selvaraju et al. 2017"
+  },
+  {
+    "id": "ai-diagnosis-limitations",
+    "class": "general",
+    "topic": "Limitations of AI brain tumor classifiers",
+    "text": "AI brain tumor classifiers have important limitations. They recognize only the tumor types in their training data (this model: glioma, meningioma, pituitary, no tumor). They may misclassify rare variants or unusual presentations. They do not assess tumor grade, size, or progression over time. Image quality, acquisition parameters, and scanner type affect accuracy. They cannot replace radiologist review or clinical examination, and they are not regulated medical devices.",
+    "source": "project documentation"
+  },
+  {
+    "id": "confidence-meaning",
+    "class": "general",
+    "topic": "What the confidence score means",
+    "text": "The confidence score reflects how certain the model is about its top prediction, on a scale from 0 to 100%. Higher confidence (above 90%) suggests the image strongly matches features the model learned during training. Lower confidence (below 70%) may indicate an ambiguous case, image quality issues, or features outside the training distribution. Even high-confidence predictions require clinical verification before any treatment decision.",
+    "source": "project documentation"
+  },
+  {
+    "id": "what-to-do-next",
+    "class": "general",
+    "topic": "What to do next",
+    "text": "An AI prediction is one input into a clinical workflow, not a final diagnosis. Recommended next steps include discussing the imaging with a licensed neurologist or neuro-oncologist, obtaining a contrast-enhanced MRI if not already done, and potentially scheduling further tests like a biopsy if a tumor is suspected. Never make medical decisions based solely on an AI tool. Seek emergency care for sudden severe headache, vision loss, weakness, or seizure.",
+    "source": "project documentation"
+  },
+  {
+    "id": "cassandra-model",
+    "class": "general",
+    "topic": "About the Cassandra v1 model",
+    "text": "Cassandra v1 is the model used in this project. It is an EfficientNet-B0 architecture fine-tuned on the public Brain Tumor MRI Dataset (around 7,000 labeled images across four classes). Reported test accuracy is 93.3% with strong precision across all classes. The model was trained with data augmentation, transfer learning, and class weighting. It is intended for educational and research use, not clinical diagnosis.",
+    "source": "project README"
+  },
+  {
+    "id": "tumor-type-differences",
+    "class": "general",
+    "topic": "How the three tumor types differ",
+    "text": "The three tumor types this model classifies have distinct origins. Gliomas grow from glial cells, which support neurons in the brain. Meningiomas grow from the meninges, the protective membranes around the brain. Pituitary adenomas grow from the pituitary gland at the base of the brain. They differ in typical location, growth speed, hormonal effects, and treatment approach. Treatment plans depend heavily on tumor type, grade, and location.",
+    "source": "American Association of Neurological Surgeons"
+  },
+  {
+    "id": "seek-medical-advice",
+    "class": "general",
+    "topic": "When to seek medical advice",
+    "text": "This tool is an educational class project, not a medical device. Any concerning result, symptom, or imaging finding should be reviewed by a licensed clinician. Emergency neurological symptoms — including sudden severe headache, vision loss, weakness on one side, difficulty speaking, or a first-time seizure — warrant immediate medical attention. AI tools can support but never replace clinical judgment.",
+    "source": "project disclaimer"
+  }
+]

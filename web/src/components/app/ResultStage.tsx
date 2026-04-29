@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { RefreshCcw, RotateCcw, ShieldAlert } from "lucide-react";
+import ChatPanel from "./ChatPanel";
 import ClassChip from "./ClassChip";
 import ConfidenceNumber from "./ConfidenceNumber";
 import ProbBars from "./ProbBars";
@@ -144,10 +145,12 @@ export default function ResultStage({
         </motion.div>
       </div>
 
+      <ChatPanel prediction={prediction} />
+
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7, ease: easeOutExpo }}
+        transition={{ duration: 0.5, delay: 0.8, ease: easeOutExpo }}
         className="flex justify-center"
       >
         <button

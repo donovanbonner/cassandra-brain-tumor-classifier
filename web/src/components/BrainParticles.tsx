@@ -130,13 +130,18 @@ export default function BrainParticles({ triggerKey = 0, onClick }: Props) {
           filter: "blur(28px)",
         }}
       />
-      <canvas
-        ref={canvasRef}
-        onClick={onClick}
-        aria-label={onClick ? "Replay brain formation" : undefined}
-        role={onClick ? "button" : undefined}
-        className={`relative block ${onClick ? "cursor-pointer" : ""}`}
-      />
+      {onClick ? (
+        <button
+          type="button"
+          onClick={onClick}
+          aria-label="Replay brain formation"
+          className="relative cursor-pointer rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-teal/40"
+        >
+          <canvas ref={canvasRef} aria-hidden className="block" />
+        </button>
+      ) : (
+        <canvas ref={canvasRef} aria-hidden className="relative block" />
+      )}
     </div>
   );
 }

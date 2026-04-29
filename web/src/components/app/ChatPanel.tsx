@@ -140,7 +140,7 @@ export default function ChatPanel({ prediction }: Props) {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.6, ease: easeOutExpo }}
-      className="rounded-[var(--radius-card)] border border-border bg-surface"
+      className="flex h-full min-h-0 flex-col rounded-[var(--radius-card)] border border-border bg-surface"
     >
       <header className="flex items-start gap-3 border-b border-border/70 p-5">
         <span
@@ -173,7 +173,7 @@ export default function ChatPanel({ prediction }: Props) {
       </div>
 
       {messages.length === 0 && (
-        <div className="px-5 py-5">
+        <div className="flex-1 overflow-y-auto px-5 py-5">
           <p className="mb-3 inline-flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-fg-muted">
             <Sparkles size={12} className="text-teal" />
             Suggested questions
@@ -195,7 +195,7 @@ export default function ChatPanel({ prediction }: Props) {
       )}
 
       {messages.length > 0 && (
-        <div className="max-h-[28rem] space-y-4 overflow-y-auto px-5 py-5">
+        <div className="flex-1 space-y-4 overflow-y-auto px-5 py-5">
           {messages.map((m) => (
             <ChatMessage key={m.id} message={m} />
           ))}

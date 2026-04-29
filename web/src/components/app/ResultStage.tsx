@@ -44,7 +44,7 @@ export default function ResultStage({
       initial="enter"
       animate="visible"
       exit="exit"
-      className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-12 sm:py-16"
+      className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-12 sm:py-16"
     >
       <div
         aria-hidden
@@ -54,16 +54,15 @@ export default function ResultStage({
         }}
       />
 
-      <div className="flex flex-col items-center gap-5 text-center">
-        <motion.div
+      <div className="flex flex-col items-center gap-4 text-center">
+        <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05, ease: easeOutExpo }}
+          className="text-xs uppercase tracking-[0.32em] text-teal"
         >
-          <p className="text-xs uppercase tracking-[0.32em] text-teal">
-            Step 3 · Diagnosis
-          </p>
-        </motion.div>
+          Step 3 · Diagnosis
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
@@ -80,14 +79,14 @@ export default function ResultStage({
           className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl"
         >
           {TUMOR_CLASS_LABELS[prediction.tumorClass]}{" "}
-          {prediction.tumorClass === "notumor" ? "detected" : "predicted"}
+          {prediction.tumorClass === "notumor" ? "Detected" : "Predicted"}
         </motion.h2>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: easeOutExpo }}
-          className="mt-2 flex flex-col items-center gap-1"
+          className="mt-1 flex flex-col items-center gap-1.5"
         >
           <p className="text-[0.7rem] uppercase tracking-[0.3em] text-fg-muted">
             Confidence
@@ -96,56 +95,58 @@ export default function ResultStage({
         </motion.div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
-          className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface p-4 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.8)]"
-        >
-          <div className="relative aspect-square overflow-hidden rounded-[calc(var(--radius-card)-6px)] bg-bg-soft/40">
-            <Image
-              unoptimized
-              src={previewUrl}
-              alt="MRI scan"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-contain p-3"
-            />
-            {prediction.heatmapDataUrl && (
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:items-stretch">
+        <div className="flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
+            className="overflow-hidden rounded-[var(--radius-card)] border border-border bg-surface p-4 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.8)]"
+          >
+            <div className="relative aspect-square overflow-hidden rounded-[calc(var(--radius-card)-6px)] bg-bg-soft/40">
               <Image
                 unoptimized
-                src={prediction.heatmapDataUrl}
-                alt=""
+                src={previewUrl}
+                alt="MRI scan"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="pointer-events-none object-contain p-3 mix-blend-screen opacity-65"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-contain p-3"
               />
-            )}
-          </div>
-          <p className="mt-3 px-1 text-xs text-fg-muted">
-            Grad-CAM attention map overlay generated from the current model
-            prediction.
-          </p>
-        </motion.div>
+              {prediction.heatmapDataUrl && (
+                <Image
+                  unoptimized
+                  src={prediction.heatmapDataUrl}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="pointer-events-none object-contain p-3 mix-blend-screen opacity-65"
+                />
+              )}
+            </div>
+            <p className="mt-3 px-1 text-xs text-fg-muted">
+              Grad-CAM attention map overlay generated from the current model
+              prediction.
+            </p>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: easeOutExpo }}
-          className="rounded-[var(--radius-card)] border border-border bg-surface p-6"
-        >
-          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-fg-muted">
-            Class probabilities
-          </p>
-          <ProbBars
-            probabilities={prediction.probabilities}
-            winner={prediction.tumorClass}
-          />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: easeOutExpo }}
+            className="rounded-[var(--radius-card)] border border-border bg-surface p-6"
+          >
+            <p className="mb-5 text-xs uppercase tracking-[0.3em] text-fg-muted">
+              Class probabilities
+            </p>
+            <ProbBars
+              probabilities={prediction.probabilities}
+              winner={prediction.tumorClass}
+            />
+          </motion.div>
+        </div>
+
+        <ChatPanel prediction={prediction} />
       </div>
-
-      <ChatPanel prediction={prediction} />
 
       <motion.div
         initial={{ opacity: 0, y: 12 }}

@@ -3,6 +3,7 @@
 NeuroScan AI is a brain tumor MRI classification system with:
 - a Next.js frontend (`web/`)
 - a FastAPI inference backend (`backend/`)
+- a retrieval-grounded chat assistant for result explanation (`web/src/app/api/chat/route.ts`)
 - model artifacts and research notebooks (`models/`, `notebooks/`)
 
 ## Project Structure
@@ -20,6 +21,7 @@ cassandra-brain-tumor-classifier/
 - Python 3.9+
 - Node.js 20+ (or current LTS)
 - npm
+- Mistral API key (required for chat assistant responses)
 
 ## Quickstart
 
@@ -60,7 +62,7 @@ Open:
 `web/.env.local`:
 
 - `NEXT_PUBLIC_INFERENCE_URL=http://127.0.0.1:8000`
-- `MISTRAL_API_KEY=` (reserved for chat assistant work)
+- `MISTRAL_API_KEY=...` (required for `/api/chat`; chat will error if missing)
 
 `backend` optional env vars:
 
@@ -81,19 +83,11 @@ Open:
   - `probabilities`
   - `heatmapDataUrl`
 
-## For Chat Assistant Integration (LangChain + Mistral)
+## Chat Assistant
 
-Recommended next steps:
-
-1. Add chat endpoint(s) in `backend/app/main.py` (for example `/chat`).
-2. Create a dedicated service module (for example `backend/app/chat.py`) for:
-   - prompt templates
-   - retrieval logic from a knowledge base built on verified sources
-   - Mistral invocation
-3. Integrate the chatbot UI in the **Result stage** (`/app`) so follow-up Q&A appears next to diagnosis outputs.
-4. Keep frontend API calls in `web/src/lib/` and avoid embedding secrets client-side.
-5. Store all private keys server-side (backend env), not in browser-exposed vars.
-6. Reuse the same CORS and health-check patterns already used by inference.
+- The `/app` result view includes a retrieval-grounded chat assistant for follow-up questions.
+- Chat is implemented in `web/src/app/api/chat/route.ts` and `web/src/lib/rag.ts`.
+- Responses are educational only (not medical advice) and limited to tumor/MRI/result topics.
 
 ## Notes
 

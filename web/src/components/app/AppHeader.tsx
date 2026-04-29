@@ -9,6 +9,8 @@ interface Props {
 }
 
 export default function AppHeader({ processing = false }: Props) {
+  const statusLabel = processing ? "Analyzing Scan" : "Model Ready";
+
   return (
     <header className="sticky top-0 z-30 border-b border-border/60 bg-bg/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
@@ -27,8 +29,10 @@ export default function AppHeader({ processing = false }: Props) {
         </Link>
 
         <div className="hidden items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-fg-muted sm:inline-flex">
-          <span className="h-2 w-2 rounded-full bg-teal shadow-[0_0_12px_var(--color-teal)]" />
-          AI prediction
+          <span
+            className={`h-2 w-2 rounded-full bg-teal shadow-[0_0_12px_var(--color-teal)] ${processing ? "animate-pulse" : ""}`}
+          />
+          {statusLabel}
         </div>
       </div>
 
